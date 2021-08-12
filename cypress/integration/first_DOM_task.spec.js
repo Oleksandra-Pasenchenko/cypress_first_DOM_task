@@ -5,20 +5,20 @@ describe(`The page with top 10 countries' population`, () => {
   });
 
   it('should contain correct number of population for each country', () => {
-      cy.contains('[class="list__item"]', 'China').should('contain', '1,439,234,240');
-      cy.contains('[class="list__item"]', 'India').should('contain', '1,379,784,212');
-      cy.contains('[class="list__item"]', 'USA').should('contain', '330,971,314');
-      cy.contains('[class="list__item"]', 'Indonesia').should('contain', '273,476,73');
-      cy.contains('[class="list__item"]', 'Pakistan').should('contain', '220,822,025');
-      cy.contains('[class="list__item"]', 'Brazil').should('contain', '220,822,025');
-      cy.contains('[class="list__item"]', 'Nigeria').should('contain', '220,822,025');
-      cy.contains('[class="list__item"]', 'Bangladesh').should('contain', '164,662,809');
-      cy.contains('[class="list__item"]', 'Russia').should('contain', '145,933,461');
-      cy.contains('[class="list__item"]', 'Mexico').should('contain', '128,910,799');
+    cy.get('.list__item').eq(0).should('contain.text', 'China').and('contain.text', '1,439,234,240');
+    cy.get('.list__item').eq(1).should('contain.text', 'India').and('contain.text', '1,379,784,212');
+    cy.get('.list__item').eq(2).should('contain.text', 'USA').and('contain.text', '330,971,314');
+    cy.get('.list__item').eq(3).should('contain.text', 'Indonesia').and('contain.text', '273,476,73');
+    cy.get('.list__item').eq(4).should('contain.text', 'Pakistan').and('contain.text', '220,822,025');
+    cy.get('.list__item').eq(5).should('contain.text', 'Brazil').and('contain.text', '220,822,025');
+    cy.get('.list__item').eq(6).should('contain.text', 'Nigeria').and('contain.text', '220,822,025');
+    cy.get('.list__item').eq(7).should('contain.text', 'Bangladesh').and('contain.text', '164,662,809');
+    cy.get('.list__item').eq(8).should('contain.text', 'Russia').and('contain.text', '145,933,461');
+    cy.get('.list__item').eq(9).should('contain.text', 'Mexico').and('contain.text', '128,910,799');
   });
 
   it('should contain correct numbers for total population and average population', () => {
-      cy.get('.total-population').should('contain', '4,525,439,640');
-      cy.get('.average-population').should('contain', '452,543,964');
+    cy.get('.total').and('contain.text', '4,525,439,640');
+    cy.get('.average').and('contain.text', '452,543,964');
   });
 });
